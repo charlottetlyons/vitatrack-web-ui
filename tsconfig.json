@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "typeRoots": ["node_modules/@types", "src/types"],
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "module": "ES6",
+        "target": "es6",
+        "jsx": "react"
+    },
+    "include": ["./src/**/*"],
+}
