@@ -1,46 +1,47 @@
 {
-  "name": "vitatrack-web-ui",
-  "version": "1.0.0",
-  "description": "A web user interface for vitatrack.",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack serve --open --mode development",
-    "build:dev": "webpack --mode development",
-    "build": "webpack --mode production"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/charlottetlyons/vitatrack-web-ui.git"
-  },
-  "author": "Charlotte Lyons",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/charlottetlyons/vitatrack-web-ui/issues"
-  },
-  "homepage": "https://github.com/charlottetlyons/vitatrack-web-ui#readme",
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react-dom": "^18.2.18",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "eslint": "^8.56.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.4.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.4",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
-  }
+    "name": "vitatrack-web-ui",
+    "version": "1.0.0",
+    "description": "A web user interface for vitatrack.",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack serve --open --mode development",
+        "build:dev": "webpack --mode development",
+        "build": "webpack --mode production",
+        "lint": "eslint . --ext .ts,.tsx,.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/charlottetlyons/vitatrack-web-ui.git"
+    },
+    "author": "Charlotte Lyons",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/charlottetlyons/vitatrack-web-ui/issues"
+    },
+    "homepage": "https://github.com/charlottetlyons/vitatrack-web-ui#readme",
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.15.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react-dom": "^18.2.18",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "eslint": "^8.56.0",
+        "eslint-config-standard-with-typescript": "^43.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-n": "^16.4.0",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-react": "^7.33.2",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.4",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.3.3",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
 }

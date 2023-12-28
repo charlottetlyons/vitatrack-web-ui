@@ -1,6 +1,10 @@
-import { ThemeOptions, ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+    type ThemeOptions,
+    ThemeProvider,
+    createTheme,
+} from '@mui/material/styles';
 import { CssBaseline, Paper, Typography } from '@mui/material';
-import React from "react";
+import React from 'react';
 
 const App: React.FC = () => {
     const defaultTheme: ThemeOptions = {
@@ -16,39 +20,42 @@ const App: React.FC = () => {
 
         typography: {
             fontWeightRegular: 400,
-            fontFamily: ['Inria Serif, Times New Roman, serif', "Livvic, Arial, sans-serif"].join(','),
+            fontFamily: [
+                'Inria Serif, Times New Roman, serif',
+                'Livvic, Arial, sans-serif',
+            ].join(','),
             h1: {
                 fontFamily: 'Inria Serif',
-                color: "#D9D7CF",
+                color: '#D9D7CF',
                 fontSize: '102px',
             },
             h2: {
                 fontFamily: 'Inria Serif',
-                color: "#D9D7CF",
+                color: '#D9D7CF',
                 fontSize: '72px',
             },
             subtitle1: {
                 fontFamily: 'Inria Serif',
-                color: "#D4E38F",
+                color: '#D4E38F',
                 fontSize: '30px',
             },
             body1: {
                 fontFamily: 'Livvic',
-                color: "#382A2E",
+                color: '#382A2E',
                 fontSize: '16px',
             },
             body2: {
                 fontFamily: 'Livvic',
-                color: "#A6A295",
+                color: '#A6A295',
                 fontSize: '30px',
             },
             button: {
                 fontFamily: 'Livvic',
-                color: "#D9D7CF",
+                color: '#D9D7CF',
                 fontSize: '16px',
-            }
+            },
         },
-    }
+    };
 
     const customTheme = createTheme(defaultTheme);
 
@@ -65,6 +72,6 @@ const App: React.FC = () => {
             </Paper>
         </ThemeProvider>
     );
-}
+};
 
 export default App;
