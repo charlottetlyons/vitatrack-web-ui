@@ -24,9 +24,9 @@ module.exports = {
         static: path.resolve(__dirname, 'dist'),
         port: 8080,
     },
-  
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
 };
