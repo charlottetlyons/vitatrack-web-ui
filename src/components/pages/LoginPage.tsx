@@ -2,6 +2,8 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ExternalPage } from './templates/ExternalPage';
+import PrimaryButton from '../buttons/PrimaryButton';
+import SecondaryButton from '../buttons/SecondaryButton';
 
 const LoginPage: React.FC = () => {
     return (
@@ -13,6 +15,8 @@ const LoginPage: React.FC = () => {
             <Typography variant="body2">Placeholder Text</Typography>
             <Typography variant="button">Login</Typography>
             <Link to="/vitatrack/error">Forks</Link>
+            <PrimaryButton text="Login" />
+            <SecondaryButton text="Register" />
         </ExternalPage>
     );
 };

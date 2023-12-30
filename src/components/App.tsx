@@ -7,7 +7,6 @@ import { CssBaseline } from '@mui/material';
 import React from 'react';
 import {
     Navigate,
-    Router,
     RouterProvider,
     createBrowserRouter,
 } from 'react-router-dom';
@@ -17,7 +16,7 @@ const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
 
 const App: React.FC = () => {
-    const router: Router = createBrowserRouter([
+    const router = createBrowserRouter([
         {
             path: '*',
             element: <Navigate to="/vitatrack/login" replace={true} />,
@@ -40,8 +39,19 @@ const App: React.FC = () => {
 
     const defaultTheme: ThemeOptions = {
         palette: {
+            primary: {
+                main: '#6B5058',
+                light: '#916D77',
+                dark: '#523D43',
+            },
+            secondary: {
+                main: '#D9D7CF',
+                light: '#E5E3DB',
+                dark: '#CCCAC3',
+            },
             text: {
                 primary: '#D9D7CF',
+                secondary: '#382A2E',
             },
             background: {
                 default: '#D9D7CF',
@@ -72,7 +82,7 @@ const App: React.FC = () => {
             },
             body1: {
                 fontFamily: 'Livvic',
-                color: '#382A2E',
+                color: '#6B5058',
                 fontSize: '16px',
             },
             body2: {
