@@ -3,10 +3,41 @@ import {
     ThemeProvider,
     createTheme,
 } from '@mui/material/styles';
-import { CssBaseline, Paper, Typography } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import React from 'react';
+import {
+    Navigate,
+    Router,
+    RouterProvider,
+    createBrowserRouter,
+} from 'react-router-dom';
+import { Layout } from './Layout';
+
+const LoginPage = React.lazy(() => import('./pages/LoginPage'));
+const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
 
 const App: React.FC = () => {
+    const router: Router = createBrowserRouter([
+        {
+            path: '*',
+            element: <Navigate to="/vitatrack/login" replace={true} />,
+        },
+        {
+            path: '/vitatrack',
+            element: <Layout />,
+            children: [
+                {
+                    path: 'login',
+                    element: <LoginPage />,
+                },
+                {
+                    path: '*',
+                    element: <ErrorPage />,
+                },
+            ],
+        },
+    ]);
+
     const defaultTheme: ThemeOptions = {
         palette: {
             text: {
@@ -62,14 +93,7 @@ const App: React.FC = () => {
     return (
         <ThemeProvider theme={customTheme}>
             <CssBaseline />
-            <Paper elevation={0}>
-                <Typography variant="h1">VitaTrack</Typography>
-                <Typography variant="h2">Login</Typography>
-                <Typography variant="subtitle1">Track your Life</Typography>
-                <Typography variant="body1">Content</Typography>
-                <Typography variant="body2">Placeholder Text</Typography>
-                <Typography variant="button">Login</Typography>
-            </Paper>
+            <RouterProvider router={router}></RouterProvider>
         </ThemeProvider>
     );
 };

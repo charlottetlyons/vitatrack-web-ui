@@ -21,6 +21,8 @@
         "quotes": ["error", "single"],
         "no-multiple-empty-lines": ["error", { "max": 2 }],
         "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error"
+        "react/jsx-uses-vars": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "error"
     }
 }
