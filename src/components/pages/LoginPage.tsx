@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ExternalPage } from './templates/ExternalPage';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
+import TextInput from '../inputs/TextInput';
 
 const LoginPage: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const LoginPage: React.FC = () => {
             <Link to="/vitatrack/error">Forks</Link>
             <PrimaryButton text="Login" />
             <SecondaryButton text="Register" />
+            <TextInput placeholderText="Email Address" />
         </ExternalPage>
     );
 };
