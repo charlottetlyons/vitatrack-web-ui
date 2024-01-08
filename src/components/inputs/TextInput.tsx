@@ -8,7 +8,7 @@ export interface TextInputProps {
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.text.primary,
         color: theme.palette.text.secondary,
         borderRadius: '15px',
     },

@@ -1,6 +1,16 @@
 import { ThemeOptions } from '@mui/material';
+import Background from '../../public/Background.png';
 
 const defaultTheme: ThemeOptions = {
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: () => ({
+                html: {
+                    backgroundImage: `url(${Background})`,
+                },
+            }),
+        },
+    },
     palette: {
         primary: {
             main: '#6B5058',
@@ -17,7 +27,7 @@ const defaultTheme: ThemeOptions = {
             secondary: '#382A2E',
         },
         background: {
-            default: '#D9D7CF',
+            default: 'transparent',
             paper: '#A1AC78',
         },
     },
@@ -32,6 +42,7 @@ const defaultTheme: ThemeOptions = {
             fontFamily: 'Inria Serif',
             color: '#D9D7CF',
             fontSize: '102px',
+            textAlign: 'center',
         },
         h2: {
             fontFamily: 'Inria Serif',
@@ -42,6 +53,7 @@ const defaultTheme: ThemeOptions = {
             fontFamily: 'Inria Serif',
             color: '#D4E38F',
             fontSize: '30px',
+            textAlign: 'center',
         },
         body1: {
             fontFamily: 'Livvic',
