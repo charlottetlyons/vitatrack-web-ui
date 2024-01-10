@@ -6,7 +6,10 @@ const defaultTheme: ThemeOptions = {
         MuiCssBaseline: {
             styleOverrides: () => ({
                 html: {
+                    height: '100%',
                     backgroundImage: `url(${Background})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                 },
             }),
         },
