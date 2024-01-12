@@ -3,7 +3,15 @@ import { Grid, Typography } from '@mui/material';
 
 const Logo: React.FC = () => {
     return (
-        <Grid item container direction="column" justifyContent="center">
+        <Grid
+            item
+            container
+            direction="column"
+            justifyContent="center"
+            sx={{
+                marginTop: '10px',
+            }}
+        >
             <Typography variant="h1">VitaTrack</Typography>
             <Typography
                 variant="subtitle1"

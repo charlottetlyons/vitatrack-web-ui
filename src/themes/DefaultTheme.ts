@@ -50,7 +50,7 @@ const defaultTheme: ThemeOptions = {
         h2: {
             fontFamily: 'Inria Serif',
             color: '#D9D7CF',
-            fontSize: '72px',
+            fontSize: '64px',
         },
         subtitle1: {
             fontFamily: 'Inria Serif',
