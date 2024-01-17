@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Link, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import TextInput from '../inputs/TextInput';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm: React.FC = () => {
+const RegisterForm: React.FC = () => {
     const navigate = useNavigate();
 
     return (
@@ -25,25 +25,27 @@ const LoginForm: React.FC = () => {
                         top: '50%',
                         transform: 'translate(0, -10px)',
                         padding: '0 10px',
+                        marginTop: '25px',
                     }}
                 >
-                    Login
+                    Register
                 </Typography>
+                <TextInput placeholderText="First Name" />
+                <TextInput placeholderText="Last Name" />
                 <TextInput placeholderText="Email Address" />
                 <TextInput placeholderText="Password" />
+                <TextInput placeholderText="Confirm Password" />
+                <TextInput placeholderText="Phone Number" />
                 <Grid item sx={{ margin: '10px 0' }}>
-                    <PrimaryButton text="Login" />
+                    <PrimaryButton text="Register" />
                     <SecondaryButton
-                        text="Register"
-                        onClick={() => navigate('/vitatrack/register')}
+                        text="Cancel"
+                        onClick={() => navigate('/vitatrack/login')}
                     />
-                </Grid>
-                <Grid item sx={{ textAlign: 'center' }}>
-                    <Link href="/reset-password">Forgot Password?</Link>
                 </Grid>
             </Grid>
         </Grid>
     );
 };
 
-export default LoginForm;
+export default RegisterForm;

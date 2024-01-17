@@ -1,7 +1,11 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Button, InputProps } from '@mui/material';
-import { ButtonType, UIButtonProps } from '../../types/ComponentTypes';
+import {
+    ButtonType,
+    OnClickFunction,
+    UIButtonProps,
+} from '../../types/ComponentTypes';
 
 interface CustomInputProps {
     buttonType: ButtonType;
@@ -50,9 +54,10 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
 const UIButton: React.FC<UIButtonProps> = (props: UIButtonProps) => {
     const text: string = props.text;
     const type: ButtonType = props.type;
+    const onClick: OnClickFunction | undefined = props.onClick;
 
     return (
-        <StyledButton disableTouchRipple buttonType={type}>
+        <StyledButton disableTouchRipple buttonType={type} onClick={onClick}>
             {text}
         </StyledButton>
     );
