@@ -24,6 +24,7 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
             textTransform: 'none',
             width: '110px',
             height: '40px',
+            margin: '0 5px',
             '&:hover': {
                 backgroundColor:
                     buttonType === ButtonType.PRIMARY

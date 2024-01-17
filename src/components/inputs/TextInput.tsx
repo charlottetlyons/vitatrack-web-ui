@@ -8,9 +8,11 @@ export interface TextInputProps {
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.text.primary,
         color: theme.palette.text.secondary,
         borderRadius: '15px',
+        margin: '10px 0',
+        boxSizing: 'border-box',
     },
     '& .MuiOutlinedInput-notchedOutline': {
         border: 'none', // This is the magic line that makes the outline disappear
