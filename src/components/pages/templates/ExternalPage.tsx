@@ -6,7 +6,7 @@ export const ExternalPage: React.FC<PageProps> = (props: PageProps) => {
     return (
         <Container
             sx={{
-                width: '55%',
+                width: '30%',
                 position: 'absolute',
                 top: '50%',
                 left: '50%',

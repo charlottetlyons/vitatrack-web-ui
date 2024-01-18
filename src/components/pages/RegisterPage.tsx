@@ -11,7 +11,6 @@ const RegisterPage: React.FC = () => {
                 direction="column"
                 justifyContent="center"
                 alignContent="center"
-                sx={{ margin: 'auto' }}
             >
                 <RegisterForm />
             </Grid>

@@ -16,33 +16,47 @@ const RegisterForm: React.FC = () => {
             justifyContent="center"
             alignItems="center"
             marginBottom="30px"
+            width="50%"
         >
-            <Grid container item direction="column" alignContent="center">
+            <Grid item alignContent="center">
                 <Typography
                     variant="h2"
                     sx={{
                         textAlign: 'center',
                         top: '50%',
-                        transform: 'translate(0, -10px)',
-                        padding: '0 10px',
-                        marginTop: '25px',
+                        margin: '25px',
                     }}
                 >
                     Register
                 </Typography>
+            </Grid>
+            <Grid
+                container
+                item
+                direction="column"
+                alignContent="center"
+                sx={{
+                    width: '100%',
+                }}
+            >
                 <TextInput placeholderText="First Name" />
                 <TextInput placeholderText="Last Name" />
                 <TextInput placeholderText="Email Address" />
                 <TextInput placeholderText="Password" />
                 <TextInput placeholderText="Confirm Password" />
                 <TextInput placeholderText="Phone Number" />
-                <Grid item sx={{ margin: '10px 0' }}>
-                    <PrimaryButton text="Register" />
-                    <SecondaryButton
-                        text="Cancel"
-                        onClick={() => navigate('/vitatrack/login')}
-                    />
-                </Grid>
+            </Grid>
+            <Grid
+                item
+                container
+                justifyContent="space-evenly"
+                sx={{ padding: '15px' }}
+            >
+                <PrimaryButton text="Register" />
+                <SecondaryButton
+                    text="Cancel"
+                    onClick={() => navigate('/vitatrack/login')}
+                />
             </Grid>
         </Grid>
     );
