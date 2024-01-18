@@ -21,6 +21,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 const TextInput: React.FC<TextInputProps> = (props: TextInputProps) => {
     return (
         <StyledTextField
+            fullWidth
             InputProps={{
                 notched: false,
             }}

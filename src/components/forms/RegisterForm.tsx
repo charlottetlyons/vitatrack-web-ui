@@ -36,7 +36,7 @@ const RegisterForm: React.FC = () => {
                 direction="column"
                 alignContent="center"
                 sx={{
-                    width: '100%',
+                    width: '80%',
                 }}
             >
                 <TextInput placeholderText="First Name" />
