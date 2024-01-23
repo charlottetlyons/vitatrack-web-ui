@@ -12,7 +12,6 @@ const LoginPage: React.FC = () => {
                 direction="column"
                 justifyContent="center"
                 alignContent="center"
-                sx={{ margin: 'auto' }}
             >
                 <Logo />
                 <LoginForm />

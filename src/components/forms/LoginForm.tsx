@@ -4,34 +4,30 @@ import TextInput from '../inputs/TextInput';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import { useNavigate } from 'react-router-dom';
+import Form from './Form';
 
 const LoginForm: React.FC = () => {
     const navigate = useNavigate();
 
     return (
-        <Grid
-            item
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            marginBottom="30px"
-        >
+        <Form>
             <Grid container item direction="column" alignContent="center">
-                <Typography
-                    variant="h2"
-                    sx={{
-                        textAlign: 'center',
-                        top: '50%',
-                        transform: 'translate(0, -10px)',
-                        padding: '0 10px',
-                    }}
-                >
-                    Login
-                </Typography>
-                <TextInput placeholderText="Email Address" />
-                <TextInput placeholderText="Password" />
-                <Grid item sx={{ margin: '10px 0' }}>
+                <Grid item>
+                    <Typography
+                        variant="h3"
+                        sx={{
+                            textAlign: 'center',
+                            marginBottom: '10px',
+                        }}
+                    >
+                        Login
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <TextInput placeholderText="Email Address" />
+                    <TextInput placeholderText="Password" />
+                </Grid>
+                <Grid item sx={{ textAlign: 'center', margin: '10px 0' }}>
                     <PrimaryButton text="Login" />
                     <SecondaryButton
                         text="Register"
@@ -42,7 +38,7 @@ const LoginForm: React.FC = () => {
                     <Link href="/reset-password">Forgot Password?</Link>
                 </Grid>
             </Grid>
-        </Grid>
+        </Form>
     );
 };
 
