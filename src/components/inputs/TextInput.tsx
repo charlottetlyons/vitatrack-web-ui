@@ -10,9 +10,8 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
         backgroundColor: theme.palette.text.primary,
         color: theme.palette.text.secondary,
-        borderRadius: '15px',
+        borderRadius: '20px',
         margin: '10px 0',
-        boxSizing: 'border-box',
     },
     '& .MuiOutlinedInput-notchedOutline': {
         border: 'none', // This is the magic line that makes the outline disappear
@@ -22,6 +21,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 const TextInput: React.FC<TextInputProps> = (props: TextInputProps) => {
     return (
         <StyledTextField
+            fullWidth
             InputProps={{
                 notched: false,
             }}

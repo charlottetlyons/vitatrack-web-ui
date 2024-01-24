@@ -1,10 +1,9 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { ExternalPage } from './templates/ExternalPage';
-import LoginForm from '../forms/LoginForm';
-import Logo from '../Logo';
+import RegisterForm from '../forms/RegisterForm';
 
-const LoginPage: React.FC = () => {
+const RegisterPage: React.FC = () => {
     return (
         <ExternalPage>
             <Grid
@@ -13,11 +12,10 @@ const LoginPage: React.FC = () => {
                 justifyContent="center"
                 alignContent="center"
             >
-                <Logo />
-                <LoginForm />
+                <RegisterForm />
             </Grid>
         </ExternalPage>
     );
 };
 
-export default LoginPage;
+export default RegisterPage;

@@ -8,9 +8,11 @@ import {
 } from 'react-router-dom';
 import { Layout } from './Layout';
 import defaultTheme from '../themes/DefaultTheme';
+import RegisterPage from './pages/RegisterPage';
 
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
+const PasswordPage = React.lazy(() => import('./pages/PasswordPage'));
 
 const App: React.FC = () => {
     const router = createBrowserRouter([
@@ -25,6 +27,14 @@ const App: React.FC = () => {
                 {
                     path: 'login',
                     element: <LoginPage />,
+                },
+                {
+                    path: 'register',
+                    element: <RegisterPage />,
+                },
+                {
+                    path: 'reset-password',
+                    element: <PasswordPage />,
                 },
                 {
                     path: '*',
