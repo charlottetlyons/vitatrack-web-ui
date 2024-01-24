@@ -1,47 +1,41 @@
 import React from 'react';
-import { Grid, Link, Typography } from '@mui/material';
-import TextInput from '../inputs/TextInput';
+import Form from './Form';
+import { Grid, Typography } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
-import { useNavigate } from 'react-router-dom';
-import Form from './Form';
+import TextInput from '../inputs/TextInput';
 
-const LoginForm: React.FC = () => {
+const ResetPasswordForm: React.FC = () => {
     const navigate = useNavigate();
 
     return (
         <Form>
             <Grid container item direction="column" alignContent="center">
-                <Grid item>
+                <Grid item alignContent="center">
                     <Typography
-                        variant="h3"
+                        variant="h2"
                         sx={{
                             textAlign: 'center',
-                            marginBottom: '10px',
+                            fontSize: '36px',
                         }}
                     >
-                        Login
+                        Reset Password
                     </Typography>
                 </Grid>
                 <Grid item>
                     <TextInput placeholderText="Email Address" />
-                    <TextInput placeholderText="Password" />
                 </Grid>
                 <Grid item sx={{ textAlign: 'center', margin: '10px 0' }}>
-                    <PrimaryButton text="Login" />
+                    <PrimaryButton text="Confirm" />
                     <SecondaryButton
-                        text="Register"
-                        onClick={() => navigate('/vitatrack/register')}
+                        text="Cancel"
+                        onClick={() => navigate('/vitatrack/login')}
                     />
-                </Grid>
-                <Grid item sx={{ textAlign: 'center' }}>
-                    <Link href="/vitatrack/reset-password">
-                        Forgot Password?
-                    </Link>
                 </Grid>
             </Grid>
         </Form>
     );
 };
 
-export default LoginForm;
+export default ResetPasswordForm;
