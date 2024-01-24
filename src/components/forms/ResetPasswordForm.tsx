@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import { Grid, Typography } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import TextInput from '../inputs/TextInput';
