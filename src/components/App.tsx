@@ -9,6 +9,7 @@ import {
 import { Layout } from './Layout';
 import defaultTheme from '../themes/DefaultTheme';
 import RegisterPage from './pages/RegisterPage';
+import DailyStatsPage from './pages/DailyStatsPage';
 
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
@@ -35,6 +36,10 @@ const App: React.FC = () => {
                 {
                     path: 'reset-password',
                     element: <PasswordPage />,
+                },
+                {
+                    path: 'daily-stats',
+                    element: <DailyStatsPage />,
                 },
                 {
                     path: '*',
