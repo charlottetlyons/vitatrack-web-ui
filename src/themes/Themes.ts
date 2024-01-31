@@ -40,6 +40,16 @@ const baseTheme: object = {
             color: '#D9D7CF',
             fontSize: '64px',
         },
+        h3: {
+            fontFamily: 'Inria Serif',
+            color: '#D9D7CF',
+            fontSize: '38px',
+        },
+        h4: {
+            fontFamily: 'Inria Serif',
+            color: '#E5DCB8',
+            fontSize: '40px',
+        },
         subtitle1: {
             fontFamily: 'Inria Serif',
             color: '#D4E38F',

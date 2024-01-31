@@ -1,12 +1,9 @@
-import { Grid, Paper, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import React from 'react';
-import styled from '@mui/material/styles/styled';
+import DailyStatsSection from '../stats/DailyStatsSection';
+import DailyMetrics from '../stats/DailyMetrics';
 
 const DailyStatsPage: React.FC = () => {
-    const StyledPaper = styled(Paper)`
-        border-radius: 10px;
-    `;
-
     return (
         <Grid
             container
@@ -18,28 +15,18 @@ const DailyStatsPage: React.FC = () => {
             }}
         >
             <Grid item>
-                <StyledPaper>
-                    <Typography variant="h2">January 1st, 2024</Typography>
-                </StyledPaper>
+                <DailyStatsSection>January 1st, 2024</DailyStatsSection>
             </Grid>
             <Grid item container columnSpacing={2}>
                 <Grid item xs={4}>
-                    <StyledPaper>
-                        <Typography variant="h2">Add Food Inputs</Typography>
-                    </StyledPaper>
+                    <DailyStatsSection>Add Food Inputs</DailyStatsSection>
                 </Grid>
                 <Grid item xs={8}>
-                    <StyledPaper>
-                        <Typography variant="h2">Daily Metrics</Typography>
-                    </StyledPaper>
+                    <DailyMetrics />
                 </Grid>
             </Grid>
             <Grid item>
-                <StyledPaper>
-                    <Typography variant="h2" sx={{ height: '100%' }}>
-                        Log
-                    </Typography>
-                </StyledPaper>
+                <DailyStatsSection>Log</DailyStatsSection>
             </Grid>
         </Grid>
     );
