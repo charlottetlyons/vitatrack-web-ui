@@ -47,7 +47,7 @@ const RegisterForm: React.FC = () => {
                 <PrimaryButton text="Register" />
                 <SecondaryButton
                     text="Cancel"
-                    onClick={() => navigate('/vitatrack/login')}
+                    onClick={() => navigate('/vitatrack/external/login')}
                 />
             </Grid>
         </Form>

@@ -1,19 +1,7 @@
 import { ThemeOptions } from '@mui/material';
 import Background from '../../public/Background.png';
 
-const defaultTheme: ThemeOptions = {
-    components: {
-        MuiCssBaseline: {
-            styleOverrides: () => ({
-                html: {
-                    height: '100%',
-                    backgroundImage: `url(${Background})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                },
-            }),
-        },
-    },
+const baseTheme: object = {
     palette: {
         primary: {
             main: '#6B5058',
@@ -76,4 +64,35 @@ const defaultTheme: ThemeOptions = {
     },
 };
 
-export default defaultTheme;
+export const externalTheme: ThemeOptions = {
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: () => ({
+                html: {
+                    height: '100%',
+                    backgroundImage: `url(${Background})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                },
+            }),
+        },
+    },
+    ...baseTheme,
+};
+
+export const internalTheme: ThemeOptions = {
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: () => ({
+                html: {
+                    height: '100%',
+                    backgroundColor: '#D9D7CF',
+                    backgroundImage: 'none',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                },
+            }),
+        },
+    },
+    ...baseTheme,
+};

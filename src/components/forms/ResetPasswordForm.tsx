@@ -30,7 +30,7 @@ const ResetPasswordForm: React.FC = () => {
                     <PrimaryButton text="Confirm" />
                     <SecondaryButton
                         text="Cancel"
-                        onClick={() => navigate('/vitatrack/login')}
+                        onClick={() => navigate('/vitatrack/external/login')}
                     />
                 </Grid>
             </Grid>
