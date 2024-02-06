@@ -14,7 +14,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
         margin: '10px 0',
     },
     '& .MuiOutlinedInput-notchedOutline': {
-        border: 'none', // This is the magic line that makes the outline disappear
+        border: 'none',
     },
 }));
 

@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import React from 'react';
 import DailyStatsSection from '../stats/DailyStatsSection';
 import DailyMetrics from '../stats/DailyMetrics';
+import AddIntakeForm from '../forms/AddIntakeForm';
 
 const DailyStatsPage: React.FC = () => {
     return (
@@ -19,7 +20,7 @@ const DailyStatsPage: React.FC = () => {
             </Grid>
             <Grid item container columnSpacing={2}>
                 <Grid item xs={4}>
-                    <DailyStatsSection>Add Food Inputs</DailyStatsSection>
+                    <AddIntakeForm />
                 </Grid>
                 <Grid item xs={8}>
                     <DailyMetrics />

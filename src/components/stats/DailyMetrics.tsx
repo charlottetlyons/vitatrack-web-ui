@@ -5,7 +5,7 @@ import { Grid, Typography } from '@mui/material';
 const DailyMetrics: React.FC = () => {
     return (
         <DailyStatsSection>
-            <Grid container direction="row" padding={0.5}>
+            <Grid container direction="row" padding={1}>
                 <Grid
                     item
                     container
