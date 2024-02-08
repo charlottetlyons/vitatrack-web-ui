@@ -3,6 +3,9 @@ import Background from '../../public/Background.png';
 
 const baseTheme: object = {
     palette: {
+        common: {
+            white: '#E0E3D2',
+        },
         primary: {
             main: '#6B5058',
             light: '#916D77',
@@ -22,7 +25,7 @@ const baseTheme: object = {
             paper: '#A1AC78',
         },
     },
-
+    shadows: ['none'],
     typography: {
         fontWeightRegular: 400,
         fontFamily: [

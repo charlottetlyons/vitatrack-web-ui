@@ -18,7 +18,9 @@ const DropDownTextInput: React.FC = () => {
         <StyledAutocomplete
             disablePortal
             options={['Banana', 'Grapes', 'Ears']}
-            renderInput={(params) => <TextField {...params} label="Food" />}
+            renderInput={(params) => (
+                <TextField {...params} placeholder="Food" />
+            )}
         />
     );
 };

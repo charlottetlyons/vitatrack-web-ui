@@ -3,6 +3,7 @@ import React from 'react';
 import DailyStatsSection from '../stats/DailyStatsSection';
 import DailyMetrics from '../stats/DailyMetrics';
 import AddIntakeForm from '../forms/AddIntakeForm';
+import FoodLog from '../stats/FoodLog';
 
 const DailyStatsPage: React.FC = () => {
     return (
@@ -27,7 +28,7 @@ const DailyStatsPage: React.FC = () => {
                 </Grid>
             </Grid>
             <Grid item>
-                <DailyStatsSection>Log</DailyStatsSection>
+                <FoodLog />
             </Grid>
         </Grid>
     );
