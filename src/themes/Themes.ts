@@ -59,6 +59,11 @@ const baseTheme: object = {
             fontSize: '30px',
             textAlign: 'center',
         },
+        subtitle2: {
+            fontFamily: 'Livvic',
+            color: '#A6A295',
+            fontSize: '30px',
+        },
         body1: {
             fontFamily: 'Livvic',
             color: '#6B5058',
@@ -66,8 +71,9 @@ const baseTheme: object = {
         },
         body2: {
             fontFamily: 'Livvic',
-            color: '#A6A295',
-            fontSize: '30px',
+            fontWeight: 700,
+            color: '#6B5058',
+            fontSize: '16px',
         },
         button: {
             fontFamily: 'Livvic',

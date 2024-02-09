@@ -1,6 +1,11 @@
 import React from 'react';
 import DailyStatsSection from './DailyStatsSection';
-import { Paper, styled } from '@mui/material';
+import {
+    Paper,
+    Table,
+    styled,
+} from '@mui/material';
+import FoodLogHeader from './FoodLogHeader';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.common.white,
@@ -11,7 +16,11 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const FoodLog: React.FC = () => {
     return (
         <DailyStatsSection sx={{ height: '100%' }}>
-            <StyledPaper>Log</StyledPaper>
+            <StyledPaper>
+                <Table>
+                    <FoodLogHeader />
+                </Table>
+            </StyledPaper>
         </DailyStatsSection>
     );
 };
