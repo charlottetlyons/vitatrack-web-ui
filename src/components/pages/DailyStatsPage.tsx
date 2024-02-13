@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import React from 'react';
 import DailyStatsSection from '../stats/DailyStatsSection';
 import DailyMetrics from '../stats/DailyMetrics';
@@ -14,10 +14,13 @@ const DailyStatsPage: React.FC = () => {
             sx={{
                 width: '98.5%',
                 margin: 'auto',
+                height: '100%',
             }}
         >
             <Grid item>
-                <DailyStatsSection>January 1st, 2024</DailyStatsSection>
+                <DailyStatsSection>
+                    <Typography variant="h2">January 1st, 2024</Typography>
+                </DailyStatsSection>
             </Grid>
             <Grid item container columnSpacing={2}>
                 <Grid item xs={4}>

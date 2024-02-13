@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DailyStatsSection from './DailyStatsSection';
-import { Paper, Table, styled } from '@mui/material';
+import { Paper, Table, styled, tableCellClasses } from '@mui/material';
 import FoodLogHeader from './FoodLogHeader';
 import FoodLogRow from './FoodLogRow';
 
@@ -49,14 +49,14 @@ const FoodLog: React.FC = () => {
 
     return (
         <DailyStatsSection sx={{ height: '100%' }}>
-            <StyledPaper>
-                <Table>
-                    <FoodLogHeader />
-                    {log.map((intake: Intake, key: number) => {
-                        return <FoodLogRow key={key} intake={intake} />;
-                    })}
-                </Table>
-            </StyledPaper>
+            <Table
+                component={StyledPaper}
+            >
+                <FoodLogHeader />
+                {log.map((intake: Intake, key: number) => {
+                    return <FoodLogRow key={key} intake={intake} />;
+                })}
+            </Table>
         </DailyStatsSection>
     );
 };

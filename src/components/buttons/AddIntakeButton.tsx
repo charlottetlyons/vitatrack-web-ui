@@ -4,8 +4,7 @@ import { Button, styled } from '@mui/material';
 const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
     color: 'grey',
-    borderRadius: '30px',
-    height: '75%',
+    borderRadius: '35px',
     '&:hover': {
         backgroundColor: theme.palette.secondary.light,
     },

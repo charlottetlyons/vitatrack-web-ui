@@ -1,4 +1,4 @@
-import { Paper, Typography, styled } from '@mui/material';
+import { Paper, styled } from '@mui/material';
 import React from 'react';
 
 type DailyStatsSectionProps = {
@@ -17,7 +17,7 @@ const DailyStatsSection: React.FC<DailyStatsSectionProps> = (
 ) => {
     return (
         <StyledPaper sx={props.sx} elevation={0}>
-            <Typography variant="h2">{props.children}</Typography>
+            {props.children}
         </StyledPaper>
     );
 };

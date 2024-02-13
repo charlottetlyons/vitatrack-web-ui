@@ -10,7 +10,6 @@ type RowProps = {
 const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
     return (
         <>
-            <Divider flexItem />
             <TableRow key={props.key}>
                 <TableCell>
                     <Typography variant="body1">{props.intake.name}</Typography>
