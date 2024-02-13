@@ -1,4 +1,4 @@
-import { TableRow, TableCell, Divider, Typography } from '@mui/material';
+import { TableRow, TableCell, Typography } from '@mui/material';
 import React from 'react';
 import { Intake } from './FoodLog';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DailyStatsSection from './DailyStatsSection';
-import { Paper, Table, styled, tableCellClasses } from '@mui/material';
+import { Paper, Table, styled } from '@mui/material';
 import FoodLogHeader from './FoodLogHeader';
 import FoodLogRow from './FoodLogRow';
 
