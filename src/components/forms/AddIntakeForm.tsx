@@ -9,15 +9,16 @@ const AddIntakeForm: React.FC = () => {
     return (
         <DailyStatsSection
             sx={{
+                display: 'flex',
                 height: '100%',
                 alignItems: 'center',
             }}
         >
             <Grid
                 container
+                direction={'row'}
                 spacing={1}
                 alignContent="center"
-                justifyContent="space-between"
                 height={1}
             >
                 <Grid item xs={6}>
@@ -32,6 +33,7 @@ const AddIntakeForm: React.FC = () => {
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
+                        justifyContent: 'center',
                     }}
                 >
                     <AddIntakeButton />

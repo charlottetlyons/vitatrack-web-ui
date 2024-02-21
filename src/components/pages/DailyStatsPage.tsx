@@ -1,9 +1,10 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import React from 'react';
 import DailyStatsSection from '../stats/DailyStatsSection';
 import DailyMetrics from '../stats/DailyMetrics';
 import AddIntakeForm from '../forms/AddIntakeForm';
 import FoodLog from '../stats/FoodLog';
+import DailyStatsHeader from '../stats/DailyStatsHeader';
 
 const DailyStatsPage: React.FC = () => {
     return (
@@ -14,12 +15,11 @@ const DailyStatsPage: React.FC = () => {
             sx={{
                 width: '98.5%',
                 margin: 'auto',
-                height: '100%',
             }}
         >
             <Grid item>
                 <DailyStatsSection>
-                    <Typography variant="h2">January 1st, 2024</Typography>
+                    <DailyStatsHeader />
                 </DailyStatsSection>
             </Grid>
             <Grid item container columnSpacing={2}>

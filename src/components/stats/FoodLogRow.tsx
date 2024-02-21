@@ -1,4 +1,4 @@
-import { TableRow, TableCell, Typography } from '@mui/material';
+import { TableRow, TableCell, Typography, styled } from '@mui/material';
 import React from 'react';
 import { Intake } from './FoodLog';
 
@@ -7,10 +7,16 @@ type RowProps = {
     intake: Intake;
 };
 
+const StyledFoodLogRow = styled(TableRow)(({ theme }) => ({
+    backgroundColor: theme.palette.common.white,
+    borderBottom: '10px solid black',
+    border: 0,
+}));
+
 const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
     return (
         <>
-            <TableRow key={props.key}>
+            <StyledFoodLogRow key={props.key} hover>
                 <TableCell>
                     <Typography variant="body1">{props.intake.name}</Typography>
                 </TableCell>
@@ -37,7 +43,7 @@ const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
                 <TableCell>
                     <Typography variant="body1">{props.intake.fat}</Typography>
                 </TableCell>
-            </TableRow>
+            </StyledFoodLogRow>
         </>
     );
 };

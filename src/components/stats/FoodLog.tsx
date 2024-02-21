@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DailyStatsSection from './DailyStatsSection';
-import { Paper, Table, styled } from '@mui/material';
+import { Paper, Table } from '@mui/material';
 import FoodLogHeader from './FoodLogHeader';
 import FoodLogRow from './FoodLogRow';
 
@@ -12,12 +12,6 @@ export type Intake = {
     carbs: number;
     fat: number;
 };
-
-const StyledPaper = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.common.white,
-    padding: '10px',
-    borderRadius: '10px',
-}));
 
 const FoodLog: React.FC = () => {
     const [log] = useState<Intake[]>([
@@ -49,9 +43,7 @@ const FoodLog: React.FC = () => {
 
     return (
         <DailyStatsSection sx={{ height: '100%' }}>
-            <Table
-                component={StyledPaper}
-            >
+            <Table stickyHeader component={Paper}>
                 <FoodLogHeader />
                 {log.map((intake: Intake, key: number) => {
                     return <FoodLogRow key={key} intake={intake} />;
