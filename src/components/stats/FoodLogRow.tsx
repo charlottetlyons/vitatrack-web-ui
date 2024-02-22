@@ -11,6 +11,9 @@ const StyledFoodLogRow = styled(TableRow)(({ theme }) => ({
     backgroundColor: theme.palette.common.white,
     borderBottom: '10px solid black',
     border: 0,
+    '&.MuiTableRow-hover:hover': {
+        backgroundColor: theme.palette.secondary.main,
+    },
 }));
 
 const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
