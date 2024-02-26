@@ -6,36 +6,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const DailyStatsHeader: React.FC = () => {
     return (
-        <Grid item container>
-            <Grid
-                item
-                container
-                direction="row"
-                alignItems="center"
-                justifyItems="center"
-                xs={4}
-            >
-                <Grid item xs={2}>
-                    <KeyboardArrowLeftIcon />
-                </Grid>
-                <Grid item xs={8}>
-                    <Typography variant="h2">
+        <Grid container justifyContent="space-between" alignItems="center">
+            <Grid item>
+                <Grid
+                    item
+                    container
+                    justifyContent="space-evenly"
+                    alignItems="center"
+                >
+                    <KeyboardArrowLeftIcon fontSize="large" />
+                    <Typography variant="h2" component="span">
                         January 1st, 2024
                     </Typography>
-                </Grid>
-                <Grid item xs={2}>
-                    <KeyboardArrowRightIcon />
+                    <KeyboardArrowRightIcon fontSize="large" />
                 </Grid>
             </Grid>
-            <Grid
-                item
-                container
-                xs={8}
-                alignContent="center"
-                justifyContent="flex-end"
-                padding={3}
-            >
-                <MenuIcon />
+            <Grid item padding={3}>
+                <MenuIcon fontSize="large" />
             </Grid>
         </Grid>
     );
