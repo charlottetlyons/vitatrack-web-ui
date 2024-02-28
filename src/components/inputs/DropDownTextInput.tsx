@@ -10,13 +10,13 @@ import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
 const StyledDropDownBody = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.text.primary,
+    backgroundColor: theme.palette.secondary.main,
     padding: '10px',
 }));
 
 const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
-        backgroundColor: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.main,
         color: theme.palette.text.secondary,
         borderRadius: '20px',
         margin: '10px 0',

@@ -5,6 +5,7 @@ const baseTheme: object = {
     palette: {
         common: {
             white: '#E0E3D2',
+            black: '#968f8b',
         },
         primary: {
             main: '#6B5058',
@@ -17,7 +18,7 @@ const baseTheme: object = {
             dark: '#CCCAC3',
         },
         text: {
-            primary: '#D9D7CF',
+            primary: '#98928e',
             secondary: '#382A2E',
         },
         background: {
