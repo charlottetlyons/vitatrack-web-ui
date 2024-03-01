@@ -18,7 +18,7 @@ const baseTheme: object = {
             dark: '#CCCAC3',
         },
         text: {
-            primary: '#98928e',
+            primary: '#98928E',
             secondary: '#382A2E',
         },
         background: {

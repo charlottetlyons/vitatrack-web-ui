@@ -18,7 +18,7 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
         [theme.breakpoints.up('xs')]: {
             color:
                 buttonType === ButtonType.PRIMARY
-                    ? theme.palette.text.primary
+                    ? theme.palette.common.white
                     : theme.palette.text.secondary,
             backgroundColor:
                 buttonType === ButtonType.PRIMARY

@@ -12,12 +12,13 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.png$/,
+                test: /\.(jpg|png|svg)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
                             name: '[path][name].[ext]',
+                            outputPath: 'assets/',
                         },
                     },
                 ],

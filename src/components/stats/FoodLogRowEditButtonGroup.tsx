@@ -6,15 +6,7 @@ import Grid from '@mui/material/Grid/Grid';
 
 const FoodLogRowEditButtonGroup: React.FC = () => {
     return (
-        <Grid container item xs={6} justifyContent="space-evenly">
-            <FloatingActionButton
-                size="small"
-                styleOverride={{
-                    backgroundColor: 'transparent',
-                }}
-            >
-                <ModeEditOutlineIcon />
-            </FloatingActionButton>
+        <Grid container item xs={3} justifyContent="flex-start">
             <FloatingActionButton
                 size="small"
                 styleOverride={{
@@ -22,6 +14,14 @@ const FoodLogRowEditButtonGroup: React.FC = () => {
                 }}
             >
                 <CloseIcon />
+            </FloatingActionButton>
+            <FloatingActionButton
+                size="small"
+                styleOverride={{
+                    backgroundColor: 'transparent',
+                }}
+            >
+                <ModeEditOutlineIcon />
             </FloatingActionButton>
         </Grid>
     );
