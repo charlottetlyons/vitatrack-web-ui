@@ -22,7 +22,7 @@ const AddIntakeForm: React.FC = () => {
                 height={1}
             >
                 <Grid item xs={6}>
-                    <DropDownTextInput />
+                    <DropDownTextInput options={['Banana', 'Grapes', 'Ears']} />
                 </Grid>
                 <Grid item xs={4}>
                     <TextInput placeholderText="Quantity" />

@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { Intake } from './FoodLog';
-import FoodLogRowEditButtonGroup from './FoodLogRowEditButtonGroup';
+import DeleteEditButtonGroup from './FoodLogRowEditButtonGroup';
 
 type RowProps = {
     key: number;
@@ -33,7 +33,9 @@ const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
                     alignItems="center"
                     justifyContent="space-evenly"
                 >
-                    <FoodLogRowEditButtonGroup />
+                    <Grid container item xs={3} justifyContent="flex-start">
+                        <DeleteEditButtonGroup />
+                    </Grid>
                     <Grid item xs={6}>
                         <Box
                             component="img"
@@ -62,9 +64,7 @@ const FoodLogRow: React.FC<RowProps> = (props: RowProps) => {
                 </Typography>
             </TableCell>
             <TableCell>
-                <Typography variant="body1">
-                    {props.intake.protein}g
-                </Typography>
+                <Typography variant="body1">{props.intake.protein}g</Typography>
             </TableCell>
             <TableCell>
                 <Typography variant="body1">{props.intake.carbs}g</Typography>

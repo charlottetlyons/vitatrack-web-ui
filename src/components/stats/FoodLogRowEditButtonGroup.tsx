@@ -2,11 +2,10 @@ import React from 'react';
 import FloatingActionButton from '../buttons/FloatingActionButton';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import CloseIcon from '@mui/icons-material/Close';
-import Grid from '@mui/material/Grid/Grid';
 
-const FoodLogRowEditButtonGroup: React.FC = () => {
+const DeleteEditButtonGroup: React.FC = () => {
     return (
-        <Grid container item xs={3} justifyContent="flex-start">
+        <>
             <FloatingActionButton
                 size="small"
                 styleOverride={{
@@ -23,8 +22,8 @@ const FoodLogRowEditButtonGroup: React.FC = () => {
             >
                 <ModeEditOutlineIcon />
             </FloatingActionButton>
-        </Grid>
+        </>
     );
 };
 
-export default FoodLogRowEditButtonGroup;
+export default DeleteEditButtonGroup;

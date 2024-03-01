@@ -17,7 +17,7 @@ const DailyMetrics: React.FC = () => {
                         Calories
                     </Typography>
                     <Typography variant="h4" align="center">
-                        100
+                        100 cal
                     </Typography>
                 </Grid>
                 <Grid
@@ -31,7 +31,7 @@ const DailyMetrics: React.FC = () => {
                         Protein
                     </Typography>
                     <Typography variant="h4" align="center">
-                        100
+                        100g
                     </Typography>
                 </Grid>
                 <Grid
@@ -45,7 +45,7 @@ const DailyMetrics: React.FC = () => {
                         Carbs
                     </Typography>
                     <Typography variant="h4" align="center">
-                        100
+                        100g
                     </Typography>
                 </Grid>
                 <Grid
@@ -59,7 +59,7 @@ const DailyMetrics: React.FC = () => {
                         Fat
                     </Typography>
                     <Typography variant="h4" align="center">
-                        100
+                        100g
                     </Typography>
                 </Grid>
             </Grid>

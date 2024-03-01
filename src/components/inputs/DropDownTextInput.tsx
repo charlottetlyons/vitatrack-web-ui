@@ -8,6 +8,11 @@ import {
 } from '@mui/material';
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+
+type DropDownTextInputProps = {
+    options: string[];
+};
 
 const StyledDropDownBody = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.main,
@@ -26,12 +31,14 @@ const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
     },
 }));
 
-const DropDownTextInput: React.FC = () => {
+const DropDownTextInput: React.FC<DropDownTextInputProps> = (
+    props: DropDownTextInputProps,
+) => {
     return (
         <StyledAutocomplete
             disablePortal
             PaperComponent={StyledDropDownBody}
-            options={['Banana', 'Grapes', 'Ears']}
+            options={props.options}
             renderInput={(params) => (
                 <TextField {...params} placeholder="Food" />
             )}
@@ -40,6 +47,7 @@ const DropDownTextInput: React.FC = () => {
                 <ListItem alignItems="center" {...props}>
                     <ListItemIcon>
                         <CloseIcon />
+                        <ModeEditOutlineIcon />
                     </ListItemIcon>
                     {option}
                 </ListItem>
