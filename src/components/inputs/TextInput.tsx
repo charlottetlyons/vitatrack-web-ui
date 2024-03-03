@@ -8,13 +8,13 @@ export interface TextInputProps {
 
 const StyledTextField = styled(TextField)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
-        backgroundColor: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.main,
         color: theme.palette.text.secondary,
         borderRadius: '20px',
         margin: '10px 0',
     },
     '& .MuiOutlinedInput-notchedOutline': {
-        border: 'none', // This is the magic line that makes the outline disappear
+        border: 'none',
     },
 }));
 

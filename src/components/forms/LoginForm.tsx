@@ -28,14 +28,19 @@ const LoginForm: React.FC = () => {
                     <TextInput placeholderText="Password" />
                 </Grid>
                 <Grid item sx={{ textAlign: 'center', margin: '10px 0' }}>
-                    <PrimaryButton text="Login" />
+                    <PrimaryButton
+                        text="Login"
+                        onClick={() =>
+                            navigate('/vitatrack/internal/daily-stats')
+                        }
+                    />
                     <SecondaryButton
                         text="Register"
-                        onClick={() => navigate('/vitatrack/register')}
+                        onClick={() => navigate('/vitatrack/external/register')}
                     />
                 </Grid>
                 <Grid item sx={{ textAlign: 'center' }}>
-                    <Link href="/vitatrack/reset-password">
+                    <Link href="/vitatrack/external/reset-password">
                         Forgot Password?
                     </Link>
                 </Grid>

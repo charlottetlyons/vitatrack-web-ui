@@ -1,5 +1,3 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
 import React from 'react';
 import {
     Navigate,
@@ -7,34 +5,38 @@ import {
     createBrowserRouter,
 } from 'react-router-dom';
 import { Layout } from './Layout';
-import defaultTheme from '../themes/DefaultTheme';
-import RegisterPage from './pages/RegisterPage';
 
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
 const PasswordPage = React.lazy(() => import('./pages/PasswordPage'));
+const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));
+const DailyStatsPage = React.lazy(() => import('./pages/DailyStatsPage'));
 
 const App: React.FC = () => {
     const router = createBrowserRouter([
         {
             path: '*',
-            element: <Navigate to="/vitatrack/login" replace={true} />,
+            element: <Navigate to="/vitatrack/external/login" replace={true} />,
         },
         {
             path: '/vitatrack',
             element: <Layout />,
             children: [
                 {
-                    path: 'login',
+                    path: 'external/login',
                     element: <LoginPage />,
                 },
                 {
-                    path: 'register',
+                    path: 'external/register',
                     element: <RegisterPage />,
                 },
                 {
-                    path: 'reset-password',
+                    path: 'external/reset-password',
                     element: <PasswordPage />,
+                },
+                {
+                    path: 'internal/daily-stats',
+                    element: <DailyStatsPage />,
                 },
                 {
                     path: '*',
@@ -44,14 +46,7 @@ const App: React.FC = () => {
         },
     ]);
 
-    const customTheme = createTheme(defaultTheme);
-
-    return (
-        <ThemeProvider theme={customTheme}>
-            <CssBaseline />
-            <RouterProvider router={router}></RouterProvider>
-        </ThemeProvider>
-    );
+    return <RouterProvider router={router}></RouterProvider>;
 };
 
 export default App;

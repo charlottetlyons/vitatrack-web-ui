@@ -9,7 +9,7 @@ export const ExternalPage: React.FC<PageProps> = (props: PageProps) => {
         left: '50%',
         transform: 'translate(-50%,-52.5%)',
         width: '30%',
-        [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.down('xl')]: {
             width: '70%',
         },
     });
