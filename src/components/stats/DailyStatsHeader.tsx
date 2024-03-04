@@ -1,9 +1,10 @@
-import { Grid, Typography, styled } from '@mui/material';
-import React from 'react';
+import { Grid, Menu, MenuItem, Typography, styled } from '@mui/material';
+import React, { useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import MenuIcon from '@mui/icons-material/Menu';
 import FloatingActionButton from '../buttons/FloatingActionButton';
+import { useNavigate } from 'react-router-dom';
 
 const StyledMenuIcon = styled(MenuIcon)(({ theme }) => ({
     color: theme.palette.secondary.main,
@@ -21,7 +22,38 @@ const StyledKeyboardArrowRightIcon = styled(KeyboardArrowRightIcon)(
     }),
 );
 
+const StyledMenu = styled(Menu)(({ theme }) => ({
+    '& .MuiMenu-list': {
+        backgroundColor: theme.palette.secondary.main,
+    },
+}));
+
 const DailyStatsHeader: React.FC = () => {
+    const navigate = useNavigate();
+
+    const [showMenu, setShowMenu] = useState(false);
+    const [anchorEl, setAnchorEl] = useState<null | SVGSVGElement>(null);
+
+    const handleClick = (event: React.MouseEvent<SVGSVGElement>): void => {
+        setAnchorEl(event.currentTarget);
+        setShowMenu(true);
+    };
+
+    const handleClose = (): void => {
+        setAnchorEl(null);
+        setShowMenu(false);
+    };
+
+    const handleAccountButton = (): void => {
+        handleClose();
+        navigate('/vitatrack/internal/account-details');
+    };
+
+    const handleLogoutButton = (): void => {
+        handleClose();
+        navigate('/vitatrack/external/login');
+    };
+
     return (
         <Grid container item justifyContent="space-between" alignItems="center">
             <Grid item>
@@ -59,8 +91,16 @@ const DailyStatsHeader: React.FC = () => {
                         backgroundColor: 'transparent',
                     }}
                 >
-                    <StyledMenuIcon fontSize="large" />
+                    <StyledMenuIcon fontSize="large" onClick={handleClick} />
                 </FloatingActionButton>
+                <StyledMenu
+                    anchorEl={anchorEl}
+                    open={showMenu}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleAccountButton}>Account</MenuItem>
+                    <MenuItem onClick={handleLogoutButton}>Logout</MenuItem>
+                </StyledMenu>
             </Grid>
         </Grid>
     );
