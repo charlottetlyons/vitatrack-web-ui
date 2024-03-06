@@ -1,12 +1,19 @@
 import React from 'react';
-import { Paper, Typography } from '@mui/material';
 import { PageProps } from '../../../types/PageTypes';
+import { Grid } from '@mui/material';
 
 export const InternalPage: React.FC<PageProps> = (props: PageProps) => {
     return (
-        <Paper elevation={0}>
-            <Typography variant="h2">Internal</Typography>
+        <Grid
+            container
+            direction="column"
+            rowSpacing={2}
+            sx={{
+                width: '98.5%',
+                margin: 'auto',
+            }}
+        >
             {props.children}
-        </Paper>
+        </Grid>
     );
 };
