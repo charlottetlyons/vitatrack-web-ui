@@ -26,7 +26,6 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
                     : theme.palette.secondary.main,
             borderRadius: '20px',
             textTransform: 'none',
-            width: '110px',
             height: '40px',
             margin: '0 5px',
             '&:hover': {
@@ -54,10 +53,16 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
 const UIButton: React.FC<UIButtonProps> = (props: UIButtonProps) => {
     const text: string = props.text;
     const type: ButtonType = props.type;
+    const sx: object | undefined = props.sx;
     const onClick: OnClickFunction | undefined = props.onClick;
 
     return (
-        <StyledButton disableTouchRipple buttonType={type} onClick={onClick}>
+        <StyledButton
+            disableTouchRipple
+            buttonType={type}
+            onClick={onClick}
+            sx={sx}
+        >
             {text}
         </StyledButton>
     );

@@ -2,8 +2,11 @@ import React from 'react';
 import { InternalPage } from './templates/InternalPage';
 import { Grid, Paper, Typography } from '@mui/material';
 import PrimaryButton from '../buttons/PrimaryButton';
+import { useNavigate } from 'react-router-dom';
 
 const AccountDetailsPage: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
         <InternalPage>
             <Paper>
@@ -18,7 +21,15 @@ const AccountDetailsPage: React.FC = () => {
                         <Typography variant="body1">Phone:</Typography>
                     </Grid>
                     <Grid item>
-                        <PrimaryButton text={'Change Password'} />
+                        <PrimaryButton
+                            text={'Change Password'}
+                            onClick={() =>
+                                navigate('/vitatrack/external/reset-password')
+                            }
+                            sx={{
+                                width: '25%',
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Paper>
