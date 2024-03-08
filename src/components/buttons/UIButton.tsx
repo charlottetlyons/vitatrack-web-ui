@@ -27,6 +27,7 @@ const StyledButton = styled(Button)<StyledButtonInputProps>(
             borderRadius: '20px',
             textTransform: 'none',
             height: '40px',
+            width: '35%',
             margin: '0 5px',
             '&:hover': {
                 backgroundColor:
