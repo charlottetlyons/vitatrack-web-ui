@@ -74,9 +74,6 @@ const AccountDetailsPage: React.FC = () => {
                             bottom: '0',
                             right: '0',
                         }}
-                        menuSx={{
-                            backgroundColor: 'grey',
-                        }}
                     />
                 </StyledOuterPaper>
             </Grid>

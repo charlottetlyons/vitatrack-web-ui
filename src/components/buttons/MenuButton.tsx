@@ -18,7 +18,7 @@ type MenuButtonProps = {
 
 const StyledMenu = styled(Menu)(({ theme }) => ({
     '& .MuiMenu-list': {
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.common.white,
     },
 }));
 
@@ -28,7 +28,6 @@ const StyledMenuIcon = styled(MenuIcon)(({ theme }) => ({
 
 const MenuButton: React.FC<MenuButtonProps> = (props: MenuButtonProps) => {
     const sx = props.sx;
-    const menuSx = props.menuSx;
 
     const navigate = useNavigate();
 
@@ -43,6 +42,11 @@ const MenuButton: React.FC<MenuButtonProps> = (props: MenuButtonProps) => {
     const handleClose = (): void => {
         setAnchorEl(null);
         setShowMenu(false);
+    };
+
+    const handleDailyStatsButton = (): void => {
+        handleClose();
+        navigate('/vitatrack/internal/daily-stats');
     };
 
     const handleAccountButton = (): void => {
@@ -72,8 +76,8 @@ const MenuButton: React.FC<MenuButtonProps> = (props: MenuButtonProps) => {
                 anchorEl={anchorEl}
                 open={showMenu}
                 onClose={handleClose}
-                sx={{ ...menuSx }}
             >
+                <MenuItem onClick={handleDailyStatsButton}>Daily</MenuItem>
                 <MenuItem onClick={handleAccountButton}>Account</MenuItem>
                 <MenuItem onClick={handleLogoutButton}>Logout</MenuItem>
             </StyledMenu>
