@@ -8,6 +8,7 @@ const PrimaryButton: React.FC<ButtonProps> = (props: ButtonProps) => {
             type={ButtonType.PRIMARY}
             text={props.text}
             onClick={props.onClick}
+            sx={props.sx}
         ></UIButton>
     );
 };

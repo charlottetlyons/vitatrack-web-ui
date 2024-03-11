@@ -1,5 +1,6 @@
 import {
     Autocomplete,
+    Grid,
     ListItem,
     ListItemIcon,
     Paper,
@@ -45,11 +46,15 @@ const DropDownTextInput: React.FC<DropDownTextInputProps> = (
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             renderOption={(props, option: any) => (
                 <ListItem alignItems="center" {...props}>
-                    <ListItemIcon>
-                        <CloseIcon />
-                        <ModeEditOutlineIcon />
-                    </ListItemIcon>
-                    {option}
+                    <Grid container justifyContent="space-between">
+                        <Grid item>{option}</Grid>
+                        <Grid item>
+                            <ListItemIcon>
+                                <ModeEditOutlineIcon />
+                                <CloseIcon />
+                            </ListItemIcon>
+                        </Grid>
+                    </Grid>
                 </ListItem>
             )}
         />
