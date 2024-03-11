@@ -10,9 +10,12 @@ import {
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import AddIcon from '@mui/icons-material/Add';
+import FloatingActionButton from '../buttons/FloatingActionButton';
 
 type DropDownTextInputProps = {
     options: string[];
+    onAdornmentClick?: () => void;
 };
 
 const StyledDropDownBody = styled(Paper)(({ theme }) => ({
@@ -41,7 +44,21 @@ const DropDownTextInput: React.FC<DropDownTextInputProps> = (
             PaperComponent={StyledDropDownBody}
             options={props.options}
             renderInput={(params) => (
-                <TextField {...params} placeholder="Food" />
+                <TextField
+                    {...params}
+                    placeholder="Food"
+                    InputProps={{
+                        ...params.InputProps,
+                        endAdornment: (
+                            <FloatingActionButton
+                                onClick={props.onAdornmentClick}
+                                size="small"
+                            >
+                                <AddIcon />
+                            </FloatingActionButton>
+                        ),
+                    }}
+                />
             )}
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             renderOption={(props, option: any) => (

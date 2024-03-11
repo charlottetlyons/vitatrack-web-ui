@@ -5,6 +5,7 @@ type FabProps = {
     children: React.ReactNode;
     size?: 'small' | 'medium' | 'large';
     styleOverride?: object;
+    onClick?: () => void;
 };
 
 const StyledFab = styled(Fab)(({ theme }) => ({
@@ -17,7 +18,11 @@ const StyledFab = styled(Fab)(({ theme }) => ({
 
 const FloatingActionButton: React.FC<FabProps> = (props: FabProps) => {
     return (
-        <StyledFab size={props.size} sx={props.styleOverride}>
+        <StyledFab
+            onClick={props.onClick}
+            size={props.size}
+            sx={props.styleOverride}
+        >
             {props.children}
         </StyledFab>
     );

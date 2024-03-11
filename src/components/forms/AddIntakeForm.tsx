@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Grid } from '@mui/material';
 import DailyStatsSection from '../stats/DailyStatsSection';
 import DropDownTextInput from '../inputs/DropDownTextInput';
 import TextInput from '../inputs/TextInput';
 import AddIntakeButton from '../buttons/AddIntakeButton';
+import AddFoodForm from './AddFoodForm';
 
 const AddIntakeForm: React.FC = () => {
+    const [showAddFoodForm, setShowAddFoodForm] = useState(false);
+
+    const handleAddFoodButton = useCallback((): void => {
+        setShowAddFoodForm(true);
+    }, [setShowAddFoodForm]);
+
     return (
         <DailyStatsSection
             sx={{
@@ -14,6 +21,7 @@ const AddIntakeForm: React.FC = () => {
                 alignItems: 'center',
             }}
         >
+            {showAddFoodForm && <AddFoodForm />}
             <Grid
                 container
                 direction={'row'}
@@ -22,7 +30,10 @@ const AddIntakeForm: React.FC = () => {
                 height={1}
             >
                 <Grid item xs={6}>
-                    <DropDownTextInput options={['Banana', 'Grapes', 'Ears']} />
+                    <DropDownTextInput
+                        options={['Banana', 'Grapes', 'Ears']}
+                        onAdornmentClick={handleAddFoodButton}
+                    />
                 </Grid>
                 <Grid item xs={4}>
                     <TextInput placeholderText="Quantity" />
