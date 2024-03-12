@@ -11,7 +11,11 @@ import TextInput from '../inputs/TextInput';
 import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 
-const AddFoodForm: React.FC = () => {
+type AddFoodFormProps = {
+    setShowAddFoodForm: (show: boolean) => void;
+};
+
+const AddFoodForm: React.FC<AddFoodFormProps> = (props: AddFoodFormProps) => {
     return (
         <Dialog open={true}>
             <Grid container direction="column" alignItems="center" padding={5}>
@@ -52,8 +56,14 @@ const AddFoodForm: React.FC = () => {
                     <SecondaryButton text="Add Image" />
                 </Grid>
                 <Grid item>
-                    <PrimaryButton text="Add" />
-                    <SecondaryButton text="Cancel" />
+                    <PrimaryButton
+                        text="Add"
+                        onClick={() => props.setShowAddFoodForm(false)}
+                    />
+                    <SecondaryButton
+                        text="Cancel"
+                        onClick={() => props.setShowAddFoodForm(false)}
+                    />
                 </Grid>
             </Grid>
         </Dialog>

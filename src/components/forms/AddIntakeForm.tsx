@@ -21,7 +21,9 @@ const AddIntakeForm: React.FC = () => {
                 alignItems: 'center',
             }}
         >
-            {showAddFoodForm && <AddFoodForm />}
+            {showAddFoodForm && (
+                <AddFoodForm setShowAddFoodForm={setShowAddFoodForm} />
+            )}
             <Grid
                 container
                 direction={'row'}
