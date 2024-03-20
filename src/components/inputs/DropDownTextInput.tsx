@@ -7,15 +7,13 @@ import {
     TextField,
     styled,
 } from '@mui/material';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
-import AddIcon from '@mui/icons-material/Add';
-import FloatingActionButton from '../buttons/FloatingActionButton';
 
 type DropDownTextInputProps = {
     options: string[];
-    onAdornmentClick?: () => void;
+    endAdornment: ReactElement;
 };
 
 const StyledDropDownBody = styled(Paper)(({ theme }) => ({
@@ -49,14 +47,7 @@ const DropDownTextInput: React.FC<DropDownTextInputProps> = (
                     placeholder="Food"
                     InputProps={{
                         ...params.InputProps,
-                        endAdornment: (
-                            <FloatingActionButton
-                                onClick={props.onAdornmentClick}
-                                size="small"
-                            >
-                                <AddIcon />
-                            </FloatingActionButton>
-                        ),
+                        endAdornment: props.endAdornment,
                     }}
                 />
             )}

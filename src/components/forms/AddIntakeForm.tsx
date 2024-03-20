@@ -5,6 +5,8 @@ import DropDownTextInput from '../inputs/DropDownTextInput';
 import TextInput from '../inputs/TextInput';
 import AddIntakeButton from '../buttons/AddIntakeButton';
 import AddFoodForm from './AddFoodForm';
+import FloatingActionButton from '../buttons/FloatingActionButton';
+import AddIcon from '@mui/icons-material/Add';
 
 const AddIntakeForm: React.FC = () => {
     const [showAddFoodForm, setShowAddFoodForm] = useState(false);
@@ -34,7 +36,14 @@ const AddIntakeForm: React.FC = () => {
                 <Grid item xs={6}>
                     <DropDownTextInput
                         options={['Banana', 'Grapes', 'Ears']}
-                        onAdornmentClick={handleAddFoodButton}
+                        endAdornment={
+                            <FloatingActionButton
+                                onClick={handleAddFoodButton}
+                                size="small"
+                            >
+                                <AddIcon />
+                            </FloatingActionButton>
+                        }
                     />
                 </Grid>
                 <Grid item xs={4}>

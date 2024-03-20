@@ -36,24 +36,27 @@ const AddFoodForm: React.FC<AddFoodFormProps> = (props: AddFoodFormProps) => {
                             <TextInput placeholderText="Metric" />
                         </Grid>
                     </Grid>
-
                     <TextInput placeholderText="Calories" />
                     <TextInput placeholderText="Protein" />
                     <TextInput placeholderText="Carbs" />
                     <TextInput placeholderText="Fat" />
-                    <RadioGroup row>
-                        <FormControlLabel
-                            value="private"
-                            control={<Radio />}
-                            label="Private"
-                        />
-                        <FormControlLabel
-                            value="public"
-                            control={<Radio />}
-                            label="Public"
-                        />
-                    </RadioGroup>
-                    <SecondaryButton text="Add Image" />
+                    <Grid item container justifyContent="space-evenly">
+                        <RadioGroup row>
+                            <FormControlLabel
+                                value="private"
+                                control={<Radio />}
+                                label="Private"
+                            />
+                            <FormControlLabel
+                                value="public"
+                                control={<Radio />}
+                                label="Public"
+                            />
+                        </RadioGroup>
+                    </Grid>
+                    <Grid item container justifyContent="center" padding={2}>
+                        <SecondaryButton text="Add Image" />
+                    </Grid>
                 </Grid>
                 <Grid item>
                     <PrimaryButton
