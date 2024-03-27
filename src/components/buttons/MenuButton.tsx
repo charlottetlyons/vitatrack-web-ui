@@ -3,6 +3,7 @@ import FloatingActionButton from './FloatingActionButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem, styled } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { AuthenticationContext } from '../../context/AuthenticationContext';
 
 type style = {
     backgroundColor?: string;
@@ -30,6 +31,8 @@ const MenuButton: React.FC<MenuButtonProps> = (props: MenuButtonProps) => {
     const sx = props.sx;
 
     const navigate = useNavigate();
+    const authenticationContext = React.useContext(AuthenticationContext);
+    const setIsAuthenticated = authenticationContext?.setIsAuthenticated;
 
     const [showMenu, setShowMenu] = useState(false);
     const [anchorEl, setAnchorEl] = useState<null | SVGSVGElement>(null);
@@ -56,7 +59,10 @@ const MenuButton: React.FC<MenuButtonProps> = (props: MenuButtonProps) => {
 
     const handleLogoutButton = (): void => {
         handleClose();
-        navigate('/vitatrack/external/login');
+        if (setIsAuthenticated) {
+            setIsAuthenticated(false);
+            navigate('/vitatrack/external/login');
+        }
     };
 
     return (

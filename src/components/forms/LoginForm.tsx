@@ -5,9 +5,13 @@ import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import { useNavigate } from 'react-router-dom';
 import Form from './Form';
+import { AuthenticationContext } from '../../context/AuthenticationContext';
 
 const LoginForm: React.FC = () => {
     const navigate = useNavigate();
+
+    const authenticationContext = React.useContext(AuthenticationContext);
+    const setIsAuthenticated = authenticationContext?.setIsAuthenticated;
 
     return (
         <Form>
@@ -30,9 +34,11 @@ const LoginForm: React.FC = () => {
                 <Grid item sx={{ textAlign: 'center', margin: '10px 0' }}>
                     <PrimaryButton
                         text="Login"
-                        onClick={() =>
-                            navigate('/vitatrack/internal/daily-stats')
-                        }
+                        onClick={() => {
+                            if (setIsAuthenticated) {
+                                setIsAuthenticated(true);
+                            }
+                        }}
                     />
                     <SecondaryButton
                         text="Register"

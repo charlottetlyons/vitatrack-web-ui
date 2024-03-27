@@ -5,6 +5,7 @@ import {
     createBrowserRouter,
 } from 'react-router-dom';
 import { Layout } from './Layout';
+import { AuthenticationContext } from '../context/AuthenticationContext';
 
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const ErrorPage = React.lazy(() => import('./pages/ErrorPage'));
@@ -16,6 +17,9 @@ const AccountDetailsPage = React.lazy(
 );
 
 const App: React.FC = () => {
+    const [isAuthenticated, setIsAuthenticated] =
+        React.useState<boolean>(false);
+
     const router = createBrowserRouter([
         {
             path: '*',
@@ -27,7 +31,14 @@ const App: React.FC = () => {
             children: [
                 {
                     path: 'external/login',
-                    element: <LoginPage />,
+                    element: !isAuthenticated ? (
+                        <LoginPage />
+                    ) : (
+                        <Navigate
+                            to="/vitatrack/internal/daily-stats"
+                            replace={true}
+                        />
+                    ),
                 },
                 {
                     path: 'external/register',
@@ -39,11 +50,25 @@ const App: React.FC = () => {
                 },
                 {
                     path: 'internal/daily-stats',
-                    element: <DailyStatsPage />,
+                    element: isAuthenticated ? (
+                        <DailyStatsPage />
+                    ) : (
+                        <Navigate
+                            to="/vitatrack/external/login"
+                            replace={true}
+                        />
+                    ),
                 },
                 {
                     path: 'internal/account-details',
-                    element: <AccountDetailsPage />,
+                    element: isAuthenticated ? (
+                        <AccountDetailsPage />
+                    ) : (
+                        <Navigate
+                            to="/vitatrack/external/login"
+                            replace={true}
+                        />
+                    ),
                 },
                 {
                     path: '*',
@@ -53,7 +78,16 @@ const App: React.FC = () => {
         },
     ]);
 
-    return <RouterProvider router={router}></RouterProvider>;
+    return (
+        <AuthenticationContext.Provider
+            value={{
+                isAuthenticated: isAuthenticated,
+                setIsAuthenticated: setIsAuthenticated,
+            }}
+        >
+            <RouterProvider router={router}></RouterProvider>
+        </AuthenticationContext.Provider>
+    );
 };
 
 export default App;
