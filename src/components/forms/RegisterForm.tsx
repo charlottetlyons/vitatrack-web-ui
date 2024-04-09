@@ -5,9 +5,22 @@ import PrimaryButton from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import { useNavigate } from 'react-router-dom';
 import Form from './Form';
+import HttpClient from '../HttpClient';
 
 const RegisterForm: React.FC = () => {
     const navigate = useNavigate();
+
+    const handleSubmit: () => void = async () => {
+        const formBody = {
+            firstName: 'John',
+            lastName: 'Doe',
+            email: '',
+            password: '',
+            phoneNumber: '',
+        };
+        // RegisterFormValidator.validate(formBody);
+        HttpClient.post('http://localhost:3000/user/register', formBody);
+    };
 
     return (
         <Form>
@@ -44,7 +57,7 @@ const RegisterForm: React.FC = () => {
                 justifyContent="space-evenly"
                 sx={{ padding: '10px' }}
             >
-                <PrimaryButton text="Register" />
+                <PrimaryButton text="Register" onClick={handleSubmit} />
                 <SecondaryButton
                     text="Cancel"
                     onClick={() => navigate('/vitatrack/external/login')}
